@@ -19,3 +19,7 @@ ERROR:  database "Overtime_development" already exists
 STATEMENT:  CREATE DATABASE "Overtime_development" ENCODING = 'unicode'
 ERROR:  database "Overtime_test" already exists
 STATEMENT:  CREATE DATABASE "Overtime_test" ENCODING = 'unicode'
+ERROR:  database "Overtime_development" already exists
+STATEMENT:  CREATE DATABASE "Overtime_development" ENCODING = 'unicode'
+ERROR:  database "Overtime_test" already exists
+STATEMENT:  CREATE DATABASE "Overtime_test" ENCODING = 'unicode'
