@@ -27,3 +27,20 @@ ERROR:  database "Overtime_development" already exists
 STATEMENT:  CREATE DATABASE "Overtime_development" ENCODING = 'unicode'
 ERROR:  database "Overtime_test" already exists
 STATEMENT:  CREATE DATABASE "Overtime_test" ENCODING = 'unicode'
+ERROR:  column "password" does not exist at character 75
+STATEMENT:  SELECT  "users".* FROM "users" WHERE (lower(email) LIKE '%bake%' OR lower(password) LIKE '%bake%' OR lower(first_name) LIKE '%bake%' OR lower(last_name) LIKE '%bake%' OR lower(type) LIKE '%bake%') LIMIT $1 OFFSET $2
+ERROR:  function lower(date) does not exist at character 39
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+STATEMENT:  SELECT  "posts".* FROM "posts" WHERE (lower(date) LIKE '%11%' OR lower(rationale) LIKE '%11%') LIMIT $1 OFFSET $2
+ERROR:  function lower(date) does not exist at character 39
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+STATEMENT:  SELECT  "posts".* FROM "posts" WHERE (lower(date) LIKE '%11%' OR lower(rationale) LIKE '%11%') LIMIT $1 OFFSET $2
+ERROR:  function lower(date) does not exist at character 39
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+STATEMENT:  SELECT  "posts".* FROM "posts" WHERE (lower(date) LIKE '%1%' OR lower(rationale) LIKE '%1%') LIMIT $1 OFFSET $2
+ERROR:  function lower(date) does not exist at character 39
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+STATEMENT:  SELECT  "posts".* FROM "posts" WHERE (lower(date) LIKE '%11%' OR lower(rationale) LIKE '%11%') LIMIT $1 OFFSET $2
+ERROR:  function lower(date) does not exist at character 39
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+STATEMENT:  SELECT  "posts".* FROM "posts" WHERE (lower(date) LIKE '%2017-12-25%' OR lower(rationale) LIKE '%2017-12-25%') LIMIT $1 OFFSET $2
