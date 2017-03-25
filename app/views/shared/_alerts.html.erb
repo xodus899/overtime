@@ -1,0 +1,8 @@
+    <% if flash[:alert] %>
+      <%= js add_gritter(flash[:alert], title: "Overtime App Alert", sticky: false, time: 3000) %>
+    <% elsif flash[:error] %>
+      <%= js add_gritter(flash[:error], title: "Overtime App Error", sticky: false, time: 3000) %>
+      <!--  adding image: :notice to the gritter field will add an image for the notificaiton. -->
+    <% else %>
+      <%= js add_gritter(flash[:notice], title: "Overtime App Notification", sticky: false, time: 3000) %>
+    <% end %>

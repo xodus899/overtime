@@ -8,16 +8,17 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="container">
-  	<div class="row">
-			<div class="col-md-12">
-				<%= render 'shared/nav' %>
-    			<%= yield %>
+  <body>
 
-          <%= js add_gritter(flash[:notice], title: "Overtime App Notification", sticky: false, time: 3000) %>
-          <!--  adding image: :notice to the gritter field will add an image for the notificaiton. -->
-    	</div>
+    <div class="container">
+  	 <div class="row">
+			<div class="col-md-12">
+			 <%= render 'shared/nav' %>
+    		<%= yield %>
+    	 </div>
+      </div>
     </div>
+    <%= render 'shared/alerts' %>  
   </body>
 </html>
 
