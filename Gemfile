@@ -70,3 +70,7 @@ gem "gritter", "1.2.0"
 
 gem "administrate"
 gem 'bourbon'
+
+# manage app authorization
+
+gem 'pundit', '~> 1.1'
