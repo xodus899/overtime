@@ -10,6 +10,10 @@ class User < ApplicationRecord
   def full_name
   	last_name.capitalize + ", " + first_name.capitalize
   end 
+
+  #  def full_name
+  # 	last_name.upcase + ", " + first_name.upcase
+  # end
 end
 
  
