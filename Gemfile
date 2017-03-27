@@ -72,7 +72,9 @@ gem "administrate"
 gem 'bourbon'
 
 # manage app authorization
-
 gem 'pundit', '~> 1.1'
+
+# twilio sms messaging
+gem 'twilio-ruby'
 
 
