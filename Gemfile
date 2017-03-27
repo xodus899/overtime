@@ -77,4 +77,7 @@ gem 'pundit', '~> 1.1'
 # twilio sms messaging
 gem 'twilio-ruby'
 
+# dotenv securing credentials
+gem 'dotenv-rails', :groups => [:development, :test]
+
 
