@@ -80,4 +80,7 @@ gem 'twilio-ruby'
 # dotenv securing credentials
 gem 'dotenv-rails', :groups => [:development, :test]
 
+# pagination
+gem 'kaminari', '~> 0.17.0'
+
 
