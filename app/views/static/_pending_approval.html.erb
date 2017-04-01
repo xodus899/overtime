@@ -1,22 +1,25 @@
-			<% pending_approvals.each do |pending_approval| %>
-				<div class= "homepage-block col-md-3"> 
-					<h4> 
-					<%= pending_approval.user.full_name %> 
-					</h4>
-					<p>
-					 <span class= 'pending-details'> Date Submitted: </span> <%= pending_approval.date %>
-					</p>
-					<p>
-					 <span class= 'pending-details'> Rationale: </span><%= truncate pending_approval.rationale, length: 60 %>
-					</p>
-				
-				<div class='row'>
-					<div class= 'col-md-6'>
-						<%= link_to 'Approve', root_path, class: 'btn btn-primary btn-block' %>
-					</div>
-					<div class= 'col-md-6'>
-						<%= link_to 'Review', root_path, class: 'btn btn-warning btn-block' %>
-					</div>
-				</div>
-			</div>
-			<% end %>
+<% pending_approvals.each do |pending_approval| %>
+	<div class= "homepage-block col-md-3"> 
+		<h4> 
+		<%= pending_approval.user.full_name %> 
+		</h4>
+		<p>
+		 <span class= 'pending-details'> Date Submitted: </span> <%= pending_approval.date %>
+		</p>
+			<p>
+		 <span class= 'pending-details'> Overtime Requested: </span> <%= pending_approval.overtime_request %> hours
+		</p>
+		<p>
+		 <span class= 'pending-details'> Rationale: </span><%= truncate pending_approval.rationale, length: 60 %>
+		</p>
+	
+	<div class='row'>
+		<div class= 'col-md-6'>
+			<%= link_to 'Approve', approve_post_path(pending_approval), class: 'btn btn-primary btn-block', id: "approve_#{pending_approval.id}" %>
+		</div>
+		<div class= 'col-md-6'>
+			<%= link_to 'Review', edit_post_path(pending_approval), class: 'btn btn-warning btn-block' %>
+		</div>
+	</div>
+</div>
+<% end %>
