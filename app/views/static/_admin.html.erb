@@ -8,17 +8,16 @@
 
 
 
-
-
-
-
-
-
-
 <div class= "contianer-fluid">
 		<div class= 'pending-homepage row'> 
-			<div class= "homepage-block col-md-3"> 
-			asdf
-			</div>
+			<h2> Confirmation Log </h2> 
+			<hr>
+				<%= render partial: 'confirmation_log', locals: {recent_audit_items: @recent_audit_items} %>
+
+				<div class= "clearfix"></div>
+				
+				<hr>
+
+				<%= link_to "View all items", audit_logs_path, class: "btn btn-danger " %>
 		</div>
 </div>

@@ -18,3 +18,8 @@
 .pending-details {
 	font-weight: 800;
 }
+
+.homepage-block:hover {
+	background-color: #172b63;
+
+}
