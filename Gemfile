@@ -82,5 +82,7 @@ gem 'dotenv-rails', :groups => [:development, :test]
 
 # pagination
 gem 'kaminari', '~> 0.17.0'
+# works with the connection between rails and heroku
+gem 'rails_12factor'
 
 
