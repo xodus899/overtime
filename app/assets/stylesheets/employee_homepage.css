@@ -2,3 +2,7 @@
 	margin: 45px 0 45px 0;
 }
 
+.employee-blocks a:link {
+	text-decoration: none;
+}
+
