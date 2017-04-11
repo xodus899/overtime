@@ -9,7 +9,8 @@ namespace :notification do
 
 
 
-  	  employee.all.each do |user|
+  	  employees.each do |employee|
+        AuditLog.create!(user_id: employee.id)
   		  SmsTool.send_sms(number: employee.phone ,message: notification_message)
   	 end
     end
@@ -18,11 +19,6 @@ namespace :notification do
   desc "Send mail notification to managers (admin users) each day to inform of pending overtime requests"
   task manager_email: :environment do
 
-    # schedule to run daily
-    # iterate over pending requests
-    # check for requests
-    # iterate over admin users
-    # send email to each admin
     submitted_posts = Post.submitted
     admin_users = AdminUser.all 
 
