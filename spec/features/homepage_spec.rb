@@ -18,10 +18,10 @@ describe 'Homepage' do
 
 		it 'allows the employee to change audit log status from the homepage' do
 		audit_log = FactoryGirl.create(:audit_log)
-		user = FactoryGirl.create(:user)
-		login_as(user, :scope => :user)
+		employee = FactoryGirl.create(:user)
+		login_as(employee, :scope => :user)
 
-		audit_log.update(user_id: user.id)
+		audit_log.update(user_id: employee.id)
 		visit root_path
 
 		click_on("confirm_#{audit_log.id}")
