@@ -50,3 +50,4 @@ class UserDashboard < Administrate::BaseDashboard
     :phone,
   ].freeze
 end
+
