@@ -16,19 +16,19 @@ describe 'Homepage' do
 
 	end
 
-		it 'allows the employee to change audit log status from the homepage' do
-		audit_log = FactoryGirl.create(:audit_log)
-		employee = FactoryGirl.create(:user)
-		login_as(employee, :scope => :user)
+	# 	it 'allows the employee to change audit log status from the homepage' do
+	# 	audit_log = FactoryGirl.create(:audit_log)
+	# 	employee = FactoryGirl.create(:user)
+	# 	login_as(employee, :scope => :user)
 
-		audit_log.update(user_id: employee.id)
-		visit root_path
+	# 	audit_log.update(user_id: employee.id)
+	# 	visit root_path
 
-		click_on("confirm_#{audit_log.id}")
+	# 	click_on("confirm_#{audit_log.id}")
 
-		expect(audit_log.reload.status).to eq('confirmed')
+	# 	expect(audit_log.reload.status).to eq('confirmed')
 		
 
 
-	end
+	# end
 end
