@@ -85,4 +85,7 @@ gem 'kaminari', '~> 0.17.0'
 # works with the connection between rails and heroku
 gem 'rails_12factor'
 
+# to ping heroku to stay alive
+gem 'newrelic_rpm'
+
 
