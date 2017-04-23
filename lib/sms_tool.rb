@@ -11,8 +11,5 @@ module SmsTool
       to: "+1#{number}",
       body: "#{message}"
     )
-
-		p "Sending SMS..."
-		p "#{message} to #{number}"
 	end
 end
