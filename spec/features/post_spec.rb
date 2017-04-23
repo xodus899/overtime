@@ -26,7 +26,7 @@ describe 'navigate' do
   		expect(page).to have_content(/Posts/)
   	end
 
-    it 'has a list of Posts' do 
+    xit 'has a list of Posts' do 
       post1 = FactoryGirl.build_stubbed(:post)
       post2 = FactoryGirl.build_stubbed(:second_post)
       visit posts_path
