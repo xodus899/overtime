@@ -13,3 +13,7 @@ module SmsTool
     )
 	end
 end
+
+# in console
+# heroku config:set TWILIO_ACCOUNT_SID= your account id 
+# this will update the tokens for heroku to work under production
