@@ -1,10 +1,10 @@
-# Overtime App
+# Employee Time Tracking App
 
 Key Requirement: company needs documentation that salaried employees did not get overtime each week.
 
 ## Models:
 
-- Post -> date:date rationale:text
+- Post -> date:date work_performed:text
 - User -> Devise
 - AdminUser -> STI -> Single table inheritance
 

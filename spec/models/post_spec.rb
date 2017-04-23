@@ -11,7 +11,7 @@ RSpec.describe Post, type: :model do
   	end
   	it "cannot be crated without a date and raionale and daily_hours" do
   		@post.date = nil
-  		@post.rationale = nil
+  		@post.work_performed = nil
       @post.daily_hours = nil
   		expect(@post).to_not be_valid
   	end
