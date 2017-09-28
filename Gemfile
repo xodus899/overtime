@@ -86,6 +86,6 @@ gem 'kaminari', '~> 0.17.0'
 gem 'rails_12factor'
 
 # to ping heroku to stay alive
-gem 'newrelic_rpm'
+# gem 'newrelic_rpm'
 
 
