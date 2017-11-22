@@ -1,7 +1,7 @@
 (function($) {
   // Make sure that every Ajax request sends the CSRF token
   function CSRFProtection(xhr) {
-    let token = $('meta[name="csrf-token"]').attr('content');
+    var token = $('meta[name="csrf-token"]').attr('content');
     if (token) xhr.setRequestHeader('X-CSRF-Token', token);
   }
   if ('ajaxPrefilter' in $) $.ajaxPrefilter(function(options, originalOptions, xhr){ CSRFProtection(xhr) });
@@ -9,14 +9,14 @@
 
   // Triggers an event on an element and returns the event result
   function fire(obj, name, data) {
-    let event = new $.Event(name);
+    var event = new $.Event(name);
     obj.trigger(event, data);
     return event.result !== false;
   }
 
   // Submits "remote" forms and links with ajax
   function handleRemote(element) {
-    let method, url, data,
+    var method, url, data,
       dataType = element.attr('data-type') || ($.ajaxSettings && $.ajaxSettings.dataType);
 
     if (element.is('form')) {
@@ -24,7 +24,7 @@
       url = element.attr('action');
       data = element.serializeArray();
       // memoized value from clicked submit button
-      let button = element.data('ujs:submit-button');
+      var button = element.data('ujs:submit-button');
       if (button) {
         data.push(button);
         element.data('ujs:submit-button', null);
@@ -59,7 +59,7 @@
   // Handles "data-method" on links such as:
   // <a href="/users/5" data-method="delete" rel="nofollow" data-confirm="Are you sure?">Delete</a>
   function handleMethod(link) {
-    let href = link.attr('href'),
+    var href = link.attr('href'),
       method = link.attr('data-method'),
       csrf_token = $('meta[name=csrf-token]').attr('content'),
       csrf_param = $('meta[name=csrf-param]').attr('content'),
@@ -76,7 +76,7 @@
 
   function disableFormElements(form) {
     form.find('input[data-disable-with]').each(function() {
-      let input = $(this);
+      var input = $(this);
       input.data('ujs:enable-with', input.val())
         .val(input.attr('data-disable-with'))
         .attr('disabled', 'disabled');
@@ -85,18 +85,18 @@
 
   function enableFormElements(form) {
     form.find('input[data-disable-with]').each(function() {
-      let input = $(this);
+      var input = $(this);
       input.val(input.data('ujs:enable-with')).removeAttr('disabled');
     });
   }
 
   function allowAction(element) {
-    let message = element.attr('data-confirm');
+    var message = element.attr('data-confirm');
     return !message || (fire(element, 'confirm') && confirm(message));
   }
 
   function requiredValuesMissing(form) {
-    let missing = false;
+    var missing = false;
     form.find('input[name][required]').each(function() {
       if (!$(this).val()) missing = true;
     });
@@ -104,7 +104,7 @@
   }
 
   $('a[data-confirm], a[data-method], a[data-remote]').live('click.rails', function(e) {
-    let link = $(this);
+    var link = $(this);
     if (!allowAction(link)) return false;
 
     if (link.attr('data-remote') != undefined) {
@@ -117,7 +117,7 @@
   });
 
   $('form').live('submit.rails', function(e) {
-    let form = $(this), remote = form.attr('data-remote') != undefined;
+    var form = $(this), remote = form.attr('data-remote') != undefined;
     if (!allowAction(form)) return false;
 
     // skip other logic when required values are missing
@@ -133,10 +133,10 @@
   });
 
   $('form input[type=submit], form button[type=submit], form button:not([type])').live('click.rails', function() {
-    let button = $(this);
+    var button = $(this);
     if (!allowAction(button)) return false;
     // register the pressed submit button
-    let name = button.attr('name'), data = name ? {name:name, value:button.val()} : null;
+    var name = button.attr('name'), data = name ? {name:name, value:button.val()} : null;
     button.closest('form').data('ujs:submit-button', data);
   });
 
